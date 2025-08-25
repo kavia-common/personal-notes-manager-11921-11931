@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientShell from "./ClientShell";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Notes — Minimal Next.js",
+  description: "Personal notes manager",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        {children}
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );
